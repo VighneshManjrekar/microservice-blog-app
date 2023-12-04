@@ -8,7 +8,15 @@ const CommentList = ({ comments }) => {
       </h5>
       <ul>
         {comments.length > 0 &&
-          comments.map((cmnt) => <li key={cmnt.id}>{cmnt.content}</li>)}
+          comments.map((cmnt) =>
+            cmnt.status == "approved" ? (
+              <li key={cmnt.id}>{cmnt.content}</li>
+            ) : cmnt.status == "rejected" ? (
+              <li key={cmnt.id}>This comment has been rejected</li>
+            ) : (
+              <li key={cmnt.id}>Pending for approval</li>
+            )
+          )}
       </ul>
     </div>
   );

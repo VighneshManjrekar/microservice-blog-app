@@ -14,13 +14,12 @@ const PostList = () => {
     fetchPosts();
   }, []);
   return (
-    <div className="d-flex flex-wrap justify-content-evenly">
+    <div className="row w-sm-100 w-100 d-flex justify-content-evenly">
       {posts ? (
         Object.values(posts).map((post) => (
           <div
             key={post.id}
-            className="card"
-            style={{ width: "30%", marginBottom: "20px" }}
+            className="card col-10 col-md-5 col-lg-3 mx-0 mb-3 mx-md-2"
           >
             <div className="card-body">
               <h3>{post.title}</h3>

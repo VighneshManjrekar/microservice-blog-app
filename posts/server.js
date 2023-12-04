@@ -40,10 +40,7 @@ app.post("/posts", (req, res) => {
   res.status(201).send(posts[id]);
 });
 
-app.post("/events", (req, res) => {
-  console.log("Event received", req.body.type);
-  res.send({});
-});
+app.post("/events", (req, res) => res.send({}));
 
 app.listen(PORT, () =>
   console.log(`Posts Server running on http://localhost:${PORT}`)
