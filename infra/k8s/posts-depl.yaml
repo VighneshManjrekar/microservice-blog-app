@@ -1,0 +1,19 @@
+# deployment manages pods in a cluster. Here we are specifying pods for posts
+# kubectl apply -f posts.depl.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: posts-depl
+spec:
+  replicas: 1 # 1 pod
+  selector: # select apps matching label app: posts
+    matchLabels:
+      app: posts
+  template:
+    metadata: # specifying this pod have label of app: posts
+      labels:
+        app: posts
+    spec:
+      containers:
+        - name: posts
+          image: vighnesh73/posts:0.0.1
