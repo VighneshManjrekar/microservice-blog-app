@@ -16,4 +16,17 @@ spec:
     spec:
       containers:
         - name: posts
-          image: vighnesh73/posts:0.0.1
+          image: vighnesh73/posts
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: posts-clusterip-srv
+spec:
+  selector:
+    app: posts
+  ports:
+    - name: posts-clusterip-srv
+      protocol: TCP
+      port: 7001
+      targetPort: 7001

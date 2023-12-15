@@ -13,7 +13,7 @@ app.post("/events", (req, res) => {
   const event = req.body;
   events.push(event);
   axios
-    .post(`http://localhost:7001/events`, event)
+    .post(`http://posts-clusterip-srv:7001/events`, event)
     .catch((err) => console.log("posts: ", err.message));
 
   axios
