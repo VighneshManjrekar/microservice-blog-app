@@ -3,3 +3,4 @@ posts      running on 7001
 comment    running on 7002
 event-bus  running on 7003
 query      running on 7004
+moderation running on 7005

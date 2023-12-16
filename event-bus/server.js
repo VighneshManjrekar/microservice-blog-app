@@ -17,15 +17,15 @@ app.post("/events", (req, res) => {
     .catch((err) => console.log("posts: ", err.message));
 
   axios
-    .post(`http://localhost:7002/events`, event)
+    .post(`http://comments-serv:7002/events`, event)
     .catch((err) => console.log("cmnts: ", err.message));
 
   axios
-    .post(`http://localhost:7004/events`, event)
+    .post(`http://query-serv:7004/events`, event)
     .catch((err) => console.log("query: ", err.message));
 
   axios
-    .post(`http://localhost:7005/events`, event)
+    .post(`http://moderation-serv:7005/events`, event)
     .catch((err) => console.log("mod: ", err.message));
 
   res.send({ status: "Ok" });

@@ -42,7 +42,7 @@ app.post("/events", (req, res) => {
 app.listen(PORT, async () => {
   console.log(`Query server running on http://locahost:${PORT}/`);
   try {
-    const res = await axios("http://localhost:7003/events");
+    const res = await axios("http://event-bus-srv:7003/events");
     res.data.forEach((e) => {
       handleEvent(e.type, e.data);
     });

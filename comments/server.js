@@ -27,7 +27,7 @@ app.post("/posts/:id/comments", (req, res) => {
   comments[postId].push({ id, content, status: "pending" });
 
   axios
-    .post("http://localhost:7003/events", {
+    .post("http://event-bus-srv:7003/events", {
       type: "CommentCreated",
       data: {
         id,
@@ -50,7 +50,7 @@ app.post("/events", (req, res) => {
     comment.status = status;
 
     axios
-      .post("http://localhost:7003/events", {
+      .post("http://event-bus-srv:7003/events", {
         type: "CommentUpdated",
         data: { id, content, postId, status },
       })
